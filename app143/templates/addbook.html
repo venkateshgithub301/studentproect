@@ -1,0 +1,21 @@
+{% extends "parent.html" %}
+{%block body%}	
+<form method="post"action="/addbook/"> 
+{%csrf_token%} 
+<table border="1"> 
+<tr>
+<td>BookName:</td>
+<td><input type="text" name="name"></td> </tr> 
+<td>Author:</td>
+<td>
+	<select name="author_id">
+	{%for i in users%}
+	<option value="{{i.pk}}">{{i.username}}</option>
+	{%endfor%}
+	</select>
+	</tr>
+</table>
+<input type="submit" name="ADD">
+</form>
+{%endblock%}
+
