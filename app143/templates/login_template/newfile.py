@@ -1,0 +1,5 @@
+a=open('file.txt','r')
+b=open('file12.txt','a')
+b.write(a.read().replace('\n','banglore\n'))
+a.close()
+b.close()

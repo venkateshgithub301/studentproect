@@ -1,5 +1,14 @@
 <form method="post"action="/insertbookform/"> 
 {%csrf_token%}
-{{form}} 
+{%for f in form%}
+	{{f.label}}
+	{{f}}
+	<br>
+	<br>
+	{%endfor%}
+
 <input type="submit" name="ADD">
+{%if form.errors%}
+	{{form.error}}
+{%endif%}
 </form>

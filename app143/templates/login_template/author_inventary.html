@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+ <html>
+ <head>
+ <title>User Inventary </title>
+ </head>>
+ <body>
+<form method="post" action="/author1inventary/">
+ 
+ {%csrf_token%} 
+ <br>
+Selct Author:
+   <select name="select">
+   {% for user in author1 %}
+  <option value="{{user.id}}" >{{user.name}}</option>
+  {% endfor %}
+
+</select> <br>
+<input type="submit" name="ADD">
+</form>
+  </body>
+  </html>

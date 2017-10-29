@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+ <html>
+ <head>
+ <title>Inventary Book</title>
+ </head>>
+ <body>
+<form method="post" action="#">
+{%csrf_token%} 
+<table border="1"> 
+   {% for book in author2%}
+<tr>
+<th>BookName:</th>	
+<th>Author</th>
+<th>price</th>
+</tr>
+<td>{{book.name}}</td>
+<td>{{book.author}}</td>
+<td>{{book.price}}</td>
+</tr>
+  {% endfor %}
+ 
+
+  
+</table>
+</form>
+  </body>
+  </html>
