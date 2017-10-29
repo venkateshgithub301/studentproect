@@ -16,7 +16,8 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from app143 import views
-
+from rest_framework.authtoken import views as drf_views
+from app143.views import *
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^getbook/',views.get_books),
@@ -29,5 +30,16 @@ urlpatterns = [
     url(r'^addbook/',views.addbook), 
     url(r'^logout/',views.logout_page),
     url(r'^insertbookform/',views.insert_book_form),
+    url(r'^api/Bookserializer/',views.GetBooksAPI.as_view()),
+    url(r'^api/login/$',drf_views.obtain_auth_token),
+    url(r'^cache/',views.book_viwe),
+    url(r'^userinventary/',views.BookInventery.as_view()),
+    
+    url(r'^authorinventary/',views.AuthorInventey.as_view()),
+    url(r'^author1inventary/',views.AuthorInventey.as_view()),
+
+
+    url(r'^bookinventary/',views.BookInventery.as_view()),
+
 
 ]
